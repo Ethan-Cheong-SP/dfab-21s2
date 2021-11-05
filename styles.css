@@ -1,84 +1,134 @@
-body {
+*, *::before, *::after {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-/* Add a black background color to the top navigation */
-.navbar {
-    background-color: black;
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Style the links inside the navigation bar */
-.navbar a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    font-size: 17px;
+html, header, body { width: 100%; }
+
+html { 
+    color: rgba(51, 51, 51, 1); 
+    scroll-behavior: smooth;
 }
 
-/* Add a color to the active/current link */
-.navbar a.active {
-    background-color: #ddd;
-    color: black;
+header, body {
+    overflow-x: hidden;
+    line-height: 1.4;
+}
+
+h1 { font-family: 'Satoshi-Bold', sans-serif; font-size: 60px; }
+h2 { font-family: 'Satoshi-Bold', sans-serif; font-size: 36px; }
+h3 { font-family: 'Satoshi-Bold', sans-serif; font-size: 24px; }
+p1 { font-family: 'Inter', sans-serif; font-size: 20px; }
+p2 { font-family: 'Inter', sans-serif; font-size: 16px; }
+p3 { font-family: 'Inter', sans-serif; font-size: 14px; }
+
+@media screen and (max-width: 450px) {
+    h1 { font-size: 39px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 16px; }
+    p1 { font-size: 13px; }
+    p2 { font-size: 11px; }
+    p3 { font-size: 9px; }
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+ion-icon { font-size: 16px; }
+
+/* Global Containers - Use in every section */
+.container {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 0 24px;
+    background: transparent;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu:hover {
+    background-color: rgba(51, 51, 51, 0.08);
+    border-radius: 100%;
+}
+.menu-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 35px;
+    margin: 10px;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #333;
+    transition: 400ms;
+}
+.toggle .bar1 {
+    -webkit-transform: rotate(45deg) translate(5px,1px);
+    transform: rotatez(45deg) translate(5px,1px);
+    width:50%;
+}
+
+.toggle .bar2 {
+    -webkit-transform: rotate(-45deg);
+    transform: rotatez(-45deg);
+}
+.toggle .bar3 {
+    -webkit-transform: rotate(-135deg) translate(-8px,14px);
+    transform: rotatez(45deg) translate(8px,-13px);
+    width:50%;
+}
+
+.dropdown-bg {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+    transition: 500ms;
+}
+.toggle .dropdown-bg {
+    height: 100%;
 }
 
 .dropdown {
-    float: left;
+    position: relative;
+    top: 25%;
+    width: 100%;
+    height: 0;
     overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 17px; 
-    text-align:center; 
-    border: none;
-    outline: none;
-    color: white;
-    padding: 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #ddd;
-    color: black;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: gray;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.header {
-    padding: 300px;
     text-align: center;
-    background: #92C2F2;
-    color: white;
-    font-size: 30px;
-    background-image: url('bg.jpg');
-    background-repeat: no-repeat;
-    background-size: auto;
+    margin-top: 30px;
 }
+.toggle .dropdown {
+    height: 300px;;
+}
+
+.dropdown li {
+    display: flex;
+    justify-content: center;
+}
+.dropdown a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding-left: 16px;
+    color: rgba(235,7,83, 1);
+}
+
+header.toggle > .dropdown {
+    height: 300px;
+}
+
+
