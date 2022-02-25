@@ -31,8 +31,8 @@ body {
 }
 
 #image {
-    width: auto;
+    width: flex;
     max-width: 600px;
-    height: auto;
+    height: flex;
     max-height: 600px;
 }
